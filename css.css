@@ -1,0 +1,63 @@
+
+/* Botones de nav: hover + scale */
+.nav-link,
+.btn-link,
+.btn-primary,
+.btn-outline-primary {
+transition: all 0.2s ease;
+transform: scale(1);
+}
+
+.nav-link:hover,
+.btn-link:hover,
+.btn-primary:hover,
+.btn-outline-primary:hover {
+transform: scale(1.05);
+color: #f5f5f5 ;
+background-color: #0056b3 ;
+}
+
+.nav-link:active,
+.btn-link:active,
+.btn-primary:active,
+.btn-outline-primary:active {
+transform: scale(0.98);
+background-color: #003d7a ;
+}
+
+/* Botón hamburguesa */
+#btn-menu {
+transition: all 0.2s ease;
+}
+
+#btn-menu:hover {
+transform: scale(1.1);
+color: #fff;
+}
+
+#btn-menu:active {
+transform: scale(0.98);
+}
+
+/* Cards con botones internos (accesos rápidos) */
+.card a.text-primary {
+transition: all 0.2s ease;
+}
+
+.card a.text-primary:hover {
+color: #0056b3;
+text-decoration: underline;
+transform: scale(1.05);
+display: inline-block;
+}
+
+.card a.text-primary:active {
+transform: scale(0.98);
+}
+
+/* Efecto ligero en botones de formularios */
+.form-control:hover,
+.input-group-text:hover {
+box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
+border-color: #0056b3;
+}
