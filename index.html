@@ -1,426 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Principal - Hospital</title>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Página Principal - Hospital</title>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet"/>
+<!-- Bootstrap 5 -->
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet"/>
+<!-- Tus estilos de interacción con botones -->
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
-
-    <!-- Bootstrap 5 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="css.css" />
-
-    <!-- Tus estilos de interacción con botones -->
-    <style>
-      .nav-link,
-      .btn-link,
-      .btn-primary,
-      .btn-outline-primary {
-        transition: all 0.2s ease;
-        transform: scale(1);
-      }
-
-      .nav-link:hover,
-      .btn-link:hover,
-      .btn-primary:hover,
-      .btn-outline-primary:hover {
-        transform: scale(1.05);
-        color: #f5f5f5 !important;
-        background-color: #0056b3 !important;
-      }
-
-      .nav-link:active,
-      .btn-link:active,
-      .btn-primary:active,
-      .btn-outline-primary:active {
-        transform: scale(0.98);
-        background-color: #003d7a !important;
-      }
-
-      #btn-menu {
-        transition: all 0.2s ease;
-      }
-
-      #btn-menu:hover {
-        transform: scale(1.1);
-        color: #fff;
-      }
-
-      #btn-menu:active {
-        transform: scale(0.98);
-      }
-
-      .card a.text-primary {
-        transition: all 0.2s ease;
-      }
-
-      .card a.text-primary:hover {
-        color: #0056b3;
-        text-decoration: underline;
-        transform: scale(1.05);
-        display: inline-block;
-      }
-
-      .card a.text-primary:active {
-        transform: scale(0.98);
-      }
-
-      .form-control:hover,
-      .input-group-text:hover {
-        box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.25);
-        border-color: #0056b3;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="bg-primary py-2 shadow-sm sticky-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <!-- BOTÓN HAMBURGUESA -->
-        <button
-          class="btn text-white d-md-none fs-3 me-2"
-          id="btn-menu"
-          aria-controls="menu-mobile"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <!-- LOGO -->
-        <a
-          href="index.html"
-          class="navbar-brand text-white fw-bold fs-4 mx-auto order-md-1"
-        >
-          <i class="fa-solid fa-hospital me-2"></i>HOSPITAL ZONAL CALETA OLIVIA
+<link href="style.css" rel="stylesheet"/></head>
+<body>
+<header class="bg-primary py-2 shadow-sm sticky-top">
+<div class="container d-flex align-items-center justify-content-between">
+<!-- BOTÓN HAMBURGUESA -->
+<button aria-controls="menu-mobile" aria-expanded="false" class="btn text-white d-md-none fs-3 me-2" id="btn-menu">
+<i class="fa-solid fa-bars"></i>
+</button>
+<!-- LOGO -->
+<a class="navbar-brand text-white fw-bold fs-4 mx-auto order-md-1" href="index.html">
+<i class="fa-solid fa-hospital me-2"></i>HOSPITAL ZONAL CALETA OLIVIA
         </a>
-
-        <!-- BUSCADOR -->
-        <form
-          class="flex-grow-1 ms-md-3 me-md-3 order-md-0 w-100 d-none d-md-block"
-          role="search"
-        >
-          <div class="input-group">
-            <span class="input-group-text bg-white border-end-0">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
-            <input
-              type="search"
-              class="form-control border-start-0"
-              placeholder="Buscar especialidad..."
-            />
-          </div>
-        </form>
-
-        <!-- NAV ESCRITORIO -->
-        <nav
-          class="d-none d-md-flex align-items-center gap-4 ms-auto order-md-2"
-        >
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="index.html"
-          >
-            <i class="fa-solid fa-house me-1"></i>Inicio
+<!-- BUSCADOR -->
+<form class="flex-grow-1 ms-md-3 me-md-3 order-md-0 w-100 d-none d-md-block" role="search">
+<div class="input-group buscador-hospital">
+<span class="input-group-text bg-white border-end-0">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
+<input class="form-control border-start-0" placeholder="Buscar especialidad..." type="search"/>
+</div>
+</form>
+<!-- NAV ESCRITORIO -->
+<nav class="d-none d-md-flex align-items-center gap-4 ms-auto order-md-2">
+<a class="text-white nav-link d-flex align-items-center" href="index.html">
+<i class="fa-solid fa-house me-1"></i>Inicio
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="paginas extras/especialidades/especialidades.html"
-          >
-            <i class="fa-solid fa-list-ul me-1"></i>Especialidades
+<a class="text-white nav-link d-flex align-items-center" href="paginas/especialidades/especialidades.html">
+<i class="fa-solid fa-list-ul me-1"></i>Especialidades
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="paginas extras/medicos/medicos.html"
-          >
-            <i class="fa-solid fa-user-doctor me-1"></i>Médicos
+<a class="text-white nav-link d-flex align-items-center" href="paginas/medicos/medicos.html">
+<i class="fa-solid fa-user-doctor me-1"></i>Médicos
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="tomar turno.html"
-          >
-            <i class="fa-solid fa-calendar-check me-1"></i>Turnos
+<a class="text-white nav-link d-flex align-items-center" href="tomar turno.html">
+<i class="fa-solid fa-calendar-check me-1"></i>Turnos
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="paginas extras/historial/historial.html"
-          >
-            <i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
+<a class="text-white nav-link d-flex align-items-center" href="paginas/historial/historial.html">
+<i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="login.html"
-          >
-            <i class="fa-solid fa-right-from-bracket me-1"></i>Salir
+<a class="text-white nav-link d-flex align-items-center" href="login.html">
+<i class="fa-solid fa-right-from-bracket me-1"></i>Salir
           </a>
-        </nav>
-      </div>
-
-      <!-- BUSCADOR MOBILE -->
-      <div class="container d-md-none mt-2">
-        <form role="search">
-          <div class="input-group">
-            <span class="input-group-text bg-white border-end-0">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
-            <input
-              type="search"
-              class="form-control border-start-0"
-              placeholder="Buscar especialidad..."
-            />
-          </div>
-        </form>
-      </div>
-
-      <!-- MENÚ MOBILE -->
-      <div id="menu-mobile" class="bg-primary p-3 d-none mt-2">
-        <a class="text-white nav-link my-2" href="index.html">
-          <i class="fa-solid fa-house me-1"></i>Inicio
+</nav>
+</div>
+<!-- BUSCADOR MOBILE -->
+<div class="container d-md-none mt-2">
+<form role="search">
+<div class="input-group buscador-hospital">
+<span class="input-group-text bg-white border-end-0">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
+<input class="form-control border-start-0" placeholder="Buscar especialidad..." type="search"/>
+</div>
+</form>
+</div>
+<!-- MENÚ MOBILE -->
+<div class="bg-primary p-3 d-none mt-2" id="menu-mobile">
+<a class="text-white nav-link my-2" href="index.html">
+<i class="fa-solid fa-house me-1"></i>Inicio
         </a>
-
-        <a class="text-white nav-link my-2" href="especialidades.html">
-          <i class="fa-solid fa-list-ul me-1"></i>Especialidades
+<a class="text-white nav-link my-2" href="especialidades.html">
+<i class="fa-solid fa-list-ul me-1"></i>Especialidades
         </a>
-
-        <a class="text-white nav-link my-2" href="medicos.html">
-          <i class="fa-solid fa-user-doctor me-1"></i>Médicos
+<a class="text-white nav-link my-2" href="medicos.html">
+<i class="fa-solid fa-user-doctor me-1"></i>Médicos
         </a>
-
-        <a class="text-white nav-link my-2" href="turnos.html">
-          <i class="fa-solid fa-calendar-check me-1"></i>Turnos
+<a class="text-white nav-link my-2" href="turnos.html">
+<i class="fa-solid fa-calendar-check me-1"></i>Turnos
         </a>
-
-        <a class="text-white nav-link my-2" href="historial.html">
-          <i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
+<a class="text-white nav-link my-2" href="historial.html">
+<i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
         </a>
-
-        <a class="text-white nav-link my-2" href="#">
-          <i class="fa-solid fa-right-from-bracket me-1"></i>Salir
+<a class="text-white nav-link my-2" href="#">
+<i class="fa-solid fa-right-from-bracket me-1"></i>Salir
         </a>
-      </div>
-
-      <!-- USUARIO -->
-      <div class="container mt-2">
-        <div id="header-usuario" class="d-inline-block">
-          <span id="usuario-logueado" class="d-none" aria-live="polite"></span>
-          <button id="btn-logout" class="btn btn-link text-white d-none">
-            Salir
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section class="bg-light py-5">
-        <div class="container">
-          <div class="row align-items-center gy-4">
-            <div class="col-lg-7">
-              <h2 class="mb-3">Bienvenido al Hospital Zonal Caleta Olivia</h2>
-              <p class="lead text-muted">
+</div>
+<!-- USUARIO -->
+<div class="container mt-2">
+<body onload="mostrarUsuario()">
+<p>Bienvenido: <span id="nombreUsuario"></span></p>
+</body>
+<div class="d-inline-block" id="header-usuario">
+<span aria-live="polite" class="d-none" id="usuario-logueado"></span>
+<button class="btn btn-link text-white d-none" id="btn-logout">
+</button>
+</div>
+</div>
+</header>
+<main>
+<section class="bg-light py-5">
+<div class="container">
+<div class="row align-items-center gy-4">
+<div class="col-lg-7">
+<h2 class="mb-3">Bienvenido al Hospital Zonal Caleta Olivia</h2>
+<p class="lead text-muted">
                 Encuentra tus especialidades, médicos disponibles, turnos y el
                 historial de atención. Accede a cada sección desde el menú
                 superior o usa los enlaces rápidos abajo.
               </p>
-            </div>
-            <div class="col-lg-5">
-              <div class="card rounded-4 shadow-sm p-4">
-                <h3 class="h5 mb-3">Accesos rápidos</h3>
-                <ul class="list-unstyled mb-0">
-                  <li class="mb-2">
-                    <a href="especialidades.html" class="text-decoration-none">
-                      <i class="fa-solid fa-list-ul text-primary me-2"></i
-                      >Especialidades</a
-                    >
-                  </li>
-                  <li class="mb-2">
-                    <a href="medicos.html" class="text-decoration-none">
-                      <i class="fa-solid fa-user-doctor text-primary me-2"></i
-                      >Médicos</a
-                    >
-                  </li>
-                  <li class="mb-2">
-                    <a href="turnos.html" class="text-decoration-none">
-                      <i
-                        class="fa-solid fa-calendar-check text-primary me-2"
-                      ></i
-                      >Turnos</a
-                    >
-                  </li>
-                  <li class="mb-2">
-                    <a href="historial.html" class="text-decoration-none">
-                      <i
-                        class="fa-solid fa-clock-rotate-left text-primary me-2"
-                      ></i
-                      >Historial</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-5">
-        <div class="container">
-          <div class="row g-4">
-            <div class="col-md-6 col-xl-3">
-              <div class="card h-100 shadow-sm rounded-4 p-4">
-                <div class="mb-3 text-primary fs-3">
-                  <i class="fa-solid fa-list-ul"></i>
-                </div>
-                <h3 class="h5">Especialidades</h3>
-                <p class="text-muted">
+</div>
+<div class="col-lg-5">
+<div class="card rounded-4 shadow-sm p-4">
+<h3 class="h5 mb-3">Accesos rápidos</h3>
+<ul class="list-unstyled mb-0">
+<li class="mb-2">
+<a class="text-decoration-none" href="paginas extras/especialidades/especialidades.html">
+<i class="fa-solid fa-list-ul text-primary me-2"></i>Especialidades</a>
+</li>
+<li class="mb-2">
+<a class="text-decoration-none" href="paginas extras/medicos/medicos.html">
+<i class="fa-solid fa-user-doctor text-primary me-2"></i>Médicos</a>
+</li>
+<li class="mb-2">
+<a class="text-decoration-none" href="tomar turno.html">
+<i class="fa-solid fa-calendar-check text-primary me-2"></i>Turnos</a>
+</li>
+<li class="mb-2">
+<a class="text-decoration-none" href="paginas extras/historial/historial.html">
+<i class="fa-solid fa-clock-rotate-left text-primary me-2"></i>Historial</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-5">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-6 col-xl-3">
+<div class="card h-100 shadow-sm rounded-4 p-4">
+<div class="mb-3 text-primary fs-3">
+<i class="fa-solid fa-list-ul"></i>
+</div>
+<h3 class="h5">Especialidades</h3>
+<p class="text-muted">
                   Conoce las áreas médicas disponibles en el hospital y
                   selecciona la que necesitas.
                 </p>
-                <a href="especialidades.html" class="text-primary fw-semibold"
-                  >Ver especialidades</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-              <div class="card h-100 shadow-sm rounded-4 p-4">
-                <div class="mb-3 text-primary fs-3">
-                  <i class="fa-solid fa-user-doctor"></i>
-                </div>
-                <h3 class="h5">Médicos</h3>
-                <p class="text-muted">
+<a class="text-primary fw-semibold" href="especialidades.html">Ver especialidades</a>
+</div>
+</div>
+<div class="col-md-6 col-xl-3">
+<div class="card h-100 shadow-sm rounded-4 p-4">
+<div class="mb-3 text-primary fs-3">
+<i class="fa-solid fa-user-doctor"></i>
+</div>
+<h3 class="h5">Médicos</h3>
+<p class="text-muted">
                   Descubre los médicos disponibles por especialidad y consulta
                   sus horarios.
                 </p>
-                <a href="medicos.html" class="text-primary fw-semibold"
-                  >Ver médicos</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-              <div class="card h-100 shadow-sm rounded-4 p-4">
-                <div class="mb-3 text-primary fs-3">
-                  <i class="fa-solid fa-calendar-check"></i>
-                </div>
-                <h3 class="h5">Turnos</h3>
-                <p class="text-muted">
+<a class="text-primary fw-semibold" href="medicos.html">Ver médicos</a>
+</div>
+</div>
+<div class="col-md-6 col-xl-3">
+<div class="card h-100 shadow-sm rounded-4 p-4">
+<div class="mb-3 text-primary fs-3">
+<i class="fa-solid fa-calendar-check"></i>
+</div>
+<h3 class="h5">Turnos</h3>
+<p class="text-muted">
                   Reserva un turno rápidamente según la especialidad y médico
                   que prefieras.
                 </p>
-                <a href="turnos.html" class="text-primary fw-semibold"
-                  >Reservar turno</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3">
-              <div class="card h-100 shadow-sm rounded-4 p-4">
-                <div class="mb-3 text-primary fs-3">
-                  <i class="fa-solid fa-clock-rotate-left"></i>
-                </div>
-                <h3 class="h5">Historial</h3>
-                <p class="text-muted">
+<a class="text-primary fw-semibold" href="turnos.html">Reservar turno</a>
+</div>
+</div>
+<div class="col-md-6 col-xl-3">
+<div class="card h-100 shadow-sm rounded-4 p-4">
+<div class="mb-3 text-primary fs-3">
+<i class="fa-solid fa-clock-rotate-left"></i>
+</div>
+<h3 class="h5">Historial</h3>
+<p class="text-muted">
                   Revisa tus consultas anteriores, turnos y estados de atención.
                 </p>
-                <a href="historial.html" class="text-primary fw-semibold"
-                  >Ver historial</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="py-5">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-md-4">
-            <h5 class="text-white">Hospital Zonal Caleta Olivia</h5>
-            <p class="text-muted mb-0">
-              Atención médica integral con especialidades, médicos y turnos
-              disponibles para toda la comunidad.
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <h5 class="text-white">Enlaces rápidos</h5>
-            <ul class="list-unstyled mb-0">
-              <li class="mb-2">
-                <a href="index.html" class="text-white text-decoration-none"
-                  ><i class="fa-solid fa-house me-2"></i>Inicio</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="paginas extras/especialidades/especialidades.html"
-                  class="text-white text-decoration-none"
-                  ><i class="fa-solid fa-list-ul me-2"></i>Especialidades</a
-                >
-              </li>
-              <li class="mb-2">
-                <a
-                  href="paginas extras/medicos/medicos.html"
-                  class="text-white text-decoration-none"
-                  ><i class="fa-solid fa-user-doctor me-2"></i>Médicos</a
-                >
-              </li>
-              <li>
-                <a
-                  href="tomar turno.html"
-                  class="text-white text-decoration-none"
-                  ><i class="fa-solid fa-calendar-check me-2"></i>Turnos</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="col-md-4">
-            <h5 class="text-white">Contáctanos</h5>
-            <ul class="list-unstyled text-muted mb-0">
-              <li class="mb-2">
-                <i class="fa-solid fa-phone me-2"></i>0800-555-7923
-              </li>
-              <li class="mb-2">
-                <i class="fa-solid fa-envelope me-2"></i
-                >contacto@hospitalzonal.com
-              </li>
-              <li>
-                <i class="fa-solid fa-location-dot me-2"></i>Caleta Olivia,
-                Santa Cruz
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <hr class="border-light mt-4" />
-
-        <div
-          class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-muted small"
-        >
-          <span>© 2025 Hospital Zonal Caleta Olivia</span>
-        </div>
-      </div>
-    </footer>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-      crossorigin="anonymous"
-    ></script>
-    <script src="script.js"></script>
-    <script src="database.js"></script>
-  </body>
+<a class="text-primary fw-semibold" href="historial.html">Ver historial</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-dark text-white py-4">
+<div class="container text-center">
+<p class="mb-0">Hospital Zonal Caleta Olivia © 2026</p>
+</div>
+</footer>
+<script crossorigin="anonymous" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="database.js"></script>
+</body>
 </html>

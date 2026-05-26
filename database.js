@@ -1,18 +1,29 @@
-// js/database.js
-
-// Obtener datos
-function obtenerDatos(clave) {
-    return JSON.parse(localStorage.getItem(clave)) || [];
+function obtenerUsuario() {
+    return localStorage.getItem("usuarioLogueado");
 }
 
-// Guardar datos
-function guardarDatos(clave, datos) {
-    localStorage.setItem(clave, JSON.stringify(datos));
+// Mostrar usuario
+function mostrarUsuario() {
+
+    let usuario = obtenerUsuario();
+
+    let elemento = document.getElementById("nombreUsuario");
+
+    if(elemento){
+
+        if(usuario){
+            elemento.textContent = usuario;
+        }else{
+            elemento.textContent = "Invitado";
+        }
+
+    }
 }
 
-// Agregar elemento
-function agregarDato(clave, nuevoDato) {
-    let datos = obtenerDatos(clave);
-    datos.push(nuevoDato);
-    guardarDatos(clave, datos);
+// Cerrar sesión
+function cerrarSesion(){
+
+    localStorage.removeItem("usuarioLogueado");
+
+    window.location.href = "login.html";
 }

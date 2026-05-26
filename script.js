@@ -41,7 +41,6 @@ const btnLogout = document.getElementById("btn-logout");
 const usuarioLogueado = document.getElementById("usuario-logueado");
 
 if (usuarioLogueado && btnLogout) {
-usuarioLogueado.textContent = "Usuario: Juan Pérez";
 usuarioLogueado.classList.remove("d-none");
 btnLogout.classList.remove("d-none");
 

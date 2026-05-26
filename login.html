@@ -1,227 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página de inicio de sesión - Hospital</title>
-
-    <!-- CDN Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    />
-
-    <!-- CDN Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <header class="bg-primary py-2 shadow-sm sticky-top">
-      <div class="container d-flex align-items-center justify-content-between">
-        <!-- BOTÓN HAMBURGUESA -->
-        <button
-          class="btn text-white d-md-none fs-3 me-2"
-          id="btn-menu"
-          aria-controls="menu-mobile"
-          aria-expanded="false"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
-        <!-- LOGO -->
-        <a
-          href="index.html"
-          class="navbar-brand text-white fw-bold fs-4 mx-auto order-md-1"
-        >
-          <i class="fa-solid fa-hospital me-2"></i>HOSPITAL ZONAL CALETA OLIVIA
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Página de inicio de sesión - Hospital</title>
+<!-- CDN Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet"/>
+<!-- CDN Bootstrap -->
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/></head>
+<body>
+<header class="bg-primary py-2 shadow-sm sticky-top">
+<div class="container d-flex align-items-center justify-content-between">
+<!-- BOTÓN HAMBURGUESA -->
+<button aria-controls="menu-mobile" aria-expanded="false" class="btn text-white d-md-none fs-3 me-2" id="btn-menu">
+<i class="fa-solid fa-bars"></i>
+</button>
+<!-- LOGO -->
+<a class="navbar-brand text-white fw-bold fs-4 mx-auto order-md-1" href="index.html">
+<i class="fa-solid fa-hospital me-2"></i>HOSPITAL ZONAL CALETA OLIVIA
         </a>
-
-        <!-- BUSCADOR -->
-        <form
-          class="flex-grow-1 ms-md-3 me-md-3 order-md-0 w-100 d-none d-md-block"
-          role="search"
-        >
-          <div class="input-group">
-            <span class="input-group-text bg-white border-end-0">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
-            <input
-              type="search"
-              class="form-control border-start-0"
-              placeholder="Buscar especialidad..."
-            />
-          </div>
-        </form>
-
-        <!-- NAV ESCRITORIO -->
-        <nav
-          class="d-none d-md-flex align-items-center gap-4 ms-auto order-md-2"
-        >
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="index.html"
-          >
-            <i class="fa-solid fa-house me-1"></i>Inicio
+<!-- BUSCADOR -->
+<form class="flex-grow-1 ms-md-3 me-md-3 order-md-0 w-100 d-none d-md-block" role="search">
+<div class="input-group buscador-hospital">
+<span class="input-group-text bg-white border-end-0">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
+<input class="form-control border-start-0" placeholder="Buscar especialidad..." type="search"/>
+</div>
+</form>
+<!-- NAV ESCRITORIO -->
+<nav class="d-none d-md-flex align-items-center gap-4 ms-auto order-md-2">
+<a class="text-white nav-link d-flex align-items-center" href="index.html">
+<i class="fa-solid fa-house me-1"></i>Inicio
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="paginas extras/especialidades/especialidades.html"
-          >
-            <i class="fa-solid fa-list-ul me-1"></i>Especialidades
+<a class="text-white nav-link d-flex align-items-center" href="paginas/especialidades/especialidades.html">
+<i class="fa-solid fa-list-ul me-1"></i>Especialidades
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="paginas extras/medicos/medicos.html"
-          >
-            <i class="fa-solid fa-user-doctor me-1"></i>Médicos
+<a class="text-white nav-link d-flex align-items-center" href="paginas/medicos/medicos.html">
+<i class="fa-solid fa-user-doctor me-1"></i>Médicos
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="tomar turno.html"
-          >
-            <i class="fa-solid fa-calendar-check me-1"></i>Turnos
+<a class="text-white nav-link d-flex align-items-center" href="tomar turno.html">
+<i class="fa-solid fa-calendar-check me-1"></i>Turnos
           </a>
-
-          <a
-            class="text-white nav-link d-flex align-items-center"
-            href="paginas extras/historial/historial.html"
-          >
-            <i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
+<a class="text-white nav-link d-flex align-items-center" href="paginas/historial/historial.html">
+<i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
           </a>
-
-          <a class="text-white nav-link d-flex align-items-center" href="login.html">
-            <i class="fa-solid fa-right-from-bracket me-1"></i>Salir
+<a class="text-white nav-link d-flex align-items-center" href="login.html">
+<i class="fa-solid fa-right-from-bracket me-1"></i>Salir
           </a>
-        </nav>
-      </div>
-
-      <!-- BUSCADOR MOBILE -->
-      <div class="container d-md-none mt-2">
-        <form role="search">
-          <div class="input-group">
-            <span class="input-group-text bg-white border-end-0">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </span>
-            <input
-              type="search"
-              class="form-control border-start-0"
-              placeholder="Buscar especialidad..."
-            />
-          </div>
-        </form>
-      </div>
-
-      <!-- MENÚ MOBILE -->
-      <div id="menu-mobile" class="bg-primary p-3 d-none mt-2">
-        <a class="text-white nav-link my-2" href="index.html">
-          <i class="fa-solid fa-house me-1"></i>Inicio
+</nav>
+</div>
+<!-- BUSCADOR MOBILE -->
+<div class="container d-md-none mt-2">
+<form role="search">
+<div class="input-group buscador-hospital">
+<span class="input-group-text bg-white border-end-0">
+<i class="fa-solid fa-magnifying-glass"></i>
+</span>
+<input class="form-control border-start-0" placeholder="Buscar especialidad..." type="search"/>
+</div>
+</form>
+</div>
+<!-- MENÚ MOBILE -->
+<div class="bg-primary p-3 d-none mt-2" id="menu-mobile">
+<a class="text-white nav-link my-2" href="index.html">
+<i class="fa-solid fa-house me-1"></i>Inicio
         </a>
-
-        <a class="text-white nav-link my-2" href="paginas extras/especialidades/especialidades.html">
-          <i class="fa-solid fa-list-ul me-1"></i>Especialidades
+<a class="text-white nav-link my-2" href="paginas/especialidades/especialidades.html">
+<i class="fa-solid fa-list-ul me-1"></i>Especialidades
         </a>
-
-        <a class="text-white nav-link my-2" href="paginas extras/medicos/medicos.html">
-          <i class="fa-solid fa-user-doctor me-1"></i>Médicos
+<a class="text-white nav-link my-2" href="paginas/medicos/medicos.html">
+<i class="fa-solid fa-user-doctor me-1"></i>Médicos
         </a>
-
-        <a class="text-white nav-link my-2" href="tomar turno.html">
-          <i class="fa-solid fa-calendar-check me-1"></i>Turnos
+<a class="text-white nav-link my-2" href="tomar turno.html">
+<i class="fa-solid fa-calendar-check me-1"></i>Turnos
         </a>
-
-        <a class="text-white nav-link my-2" href="paginas extras/historial/historial.html">
-          <i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
+<a class="text-white nav-link my-2" href="paginas/historial/historial.html">
+<i class="fa-solid fa-clock-rotate-left me-1"></i>Historial
         </a>
-
-        <a class="text-white nav-link my-2" href="login.html">
-          <i class="fa-solid fa-right-from-bracket me-1"></i>Salir
+<a class="text-white nav-link my-2" href="login.html">
+<i class="fa-solid fa-right-from-bracket me-1"></i>Salir
         </a>
-      </div>
-
-      <!-- USUARIO -->
-      <div class="container mt-2">
-        <div id="header-usuario" class="d-inline-block">
-          <span id="usuario-logueado" class="d-none" aria-live="polite"></span>
-          <button id="btn-logout" class="btn btn-link text-white d-none">
+</div>
+<!-- USUARIO -->
+<div class="container mt-2">
+<div class="d-inline-block" id="header-usuario">
+<span aria-live="polite" class="d-none" id="usuario-logueado"></span>
+<button class="btn btn-link text-white d-none" id="btn-logout">
             Salir
           </button>
-        </div>
-      </div>
-    </header>
-
-    <main class="py-5">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-8 col-lg-5">
-            <div class="card rounded-4 shadow-sm p-4">
-              <h2 class="mb-3">Iniciar sesión</h2>
-              <p class="text-muted mb-4">
+</div>
+</div>
+</header>
+<main class="py-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-12 col-md-8 col-lg-5">
+<div class="card rounded-4 shadow-sm p-4">
+<h2 class="mb-3">Iniciar sesión</h2>
+<p class="text-muted mb-4">
                 Ingrese su correo electrónico y contraseña para acceder a su
                 cuenta.
               </p>
+<form id="form-login" method="post">
+<div class="mb-3">
+<label class="form-label" for="usuario">
+                    usuario
+                  </label>
+<br/>
+<input id="usuario" placeholder="Usuario" type="text"/>
+</div>
+<div class="mb-3">
+<label class="form-label" for="email">Correo electrónico *</label>
+<input autocomplete="email" class="form-control" id="email" name="email" placeholder="Dirección de correo electrónico" required="" type="email">
+</input></div>
+<div class="mb-3">
+<label class="form-label" for="password">Contraseña *</label>
+<input autocomplete="current-password" class="form-control" id="password" name="password" placeholder="Contraseña" required="" type="password"/>
+</div>
+<div aria-live="polite" class="alert alert-danger d-none" id="login-mensaje" role="status"></div>
+<button class="btn btn-primary w-100" type="submit">
+  Ingresar
+</button>
+</form>
 
-              <form id="form-login" method="post">
-                <div class="mb-3">
-                  <label for="email" class="form-label"
-                    >Correo electrónico *</label
-                  >
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="form-control"
-                    placeholder="Dirección de correo electrónico"
-                    required
-                    autocomplete="email"
-                  />
-                </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-dark text-white py-4">
+<div class="container text-center">
+<p class="mb-0">Hospital Zonal Caleta Olivia © 2026</p>
+</div>
+</footer>
+</body>
+<script>
 
-                <div class="mb-3">
-                  <label for="password" class="form-label">Contraseña *</label>
-                  <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    class="form-control"
-                    placeholder="Contraseña"
-                    required
-                    autocomplete="current-password"
-                  />
-                </div>
+const form = document.getElementById("form-login");
 
-                <div
-                  id="login-mensaje"
-                  class="alert alert-danger d-none"
-                  role="status"
-                  aria-live="polite"
-                ></div>
+form.addEventListener("submit", function(event){
 
-                <button type="submit" class="btn btn-primary w-100">
-                  Iniciar sesión
-                </button>
-              </form>
+    // Evita recargar
+    event.preventDefault();
 
-              <p class="text-center text-muted mt-3 mb-0">
-                ¿No tienes cuenta todavía?
-                <a href="registro.html">Registrarse</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+    // Obtener valores
+    let usuario = document.getElementById("usuario").value.trim();
 
-    <footer class="bg-dark text-white py-4">
-      <div class="container text-center">
-        <p class="mb-0">Hospital Zonal Caleta Olivia © 2026</p>
-      </div>
-    </footer>
-  </body>
+    let password = document.getElementById("password").value.trim();
+
+    // Validación
+    if(usuario === "" || password === ""){
+
+        alert("Complete todos los campos");
+
+        return;
+    }
+
+    // Guardar usuario
+    localStorage.setItem("usuarioLogueado", usuario);
+
+    // Redirigir
+    window.location.href = "index.html";
+
+});
+
+</script>
 </html>
