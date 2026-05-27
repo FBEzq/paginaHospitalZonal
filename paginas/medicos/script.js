@@ -124,8 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="card-text text-muted">
               <i class="fa-solid fa-clock me-1"></i>${m.horario}
             </p>
-            <a href="turnos.html?medico=${encodeURIComponent(m.nombre)}"
-               class="btn btn-primary btn-sm">
+<a 
+  href="../../tomar turno.html?medico=${encodeURIComponent(m.nombre)}&especialidad=${encodeURIComponent(m.especialidad)}"
+  class="btn btn-primary btn-sm"
+>
               <i class="fa-solid fa-calendar-check me-1"></i>Reservar turno
             </a>
           </div>

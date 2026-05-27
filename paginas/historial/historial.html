@@ -21,6 +21,68 @@
  <link rel="stylesheet" href="../../style.css" />
  
 </head>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const lista =
+    document.getElementById("lista-turnos");
+
+  const turnos =
+    JSON.parse(localStorage.getItem("turnos")) || [];
+
+  if (turnos.length === 0) {
+
+    lista.innerHTML = `
+      <div class="alert alert-info">
+        No hay turnos registrados.
+      </div>
+    `;
+
+    return;
+  }
+
+  turnos.forEach((turno) => {
+
+    lista.innerHTML += `
+      <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+
+          <h5 class="card-title">
+            ${turno.especialidad}
+          </h5>
+
+          <p class="card-text">
+            <strong>Médico:</strong>
+            ${turno.medico}
+          </p>
+
+          <p class="card-text">
+            <strong>Paciente:</strong>
+            ${turno.nombre}
+          </p>
+
+          <p class="card-text">
+            <strong>Fecha:</strong>
+            ${turno.fecha}
+          </p>
+
+          <p class="card-text">
+            <strong>Hora:</strong>
+            ${turno.hora}
+          </p>
+
+          <span class="badge bg-warning">
+            ${turno.estado}
+          </span>
+
+        </div>
+      </div>
+    `;
+  });
+});
+
+</script>
 <body>
   <header class="bg-primary py-2 shadow-sm sticky-top">
     <div class="container d-flex align-items-center justify-content-between">

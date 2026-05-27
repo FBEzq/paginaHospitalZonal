@@ -110,10 +110,12 @@
 <label class="form-label" for="especialidad">Especialidad</label>
 <select class="form-select" id="especialidad" required="">
 <option value="">Seleccionar...</option>
-<option value="clinica">Clínica médica</option>
-<option value="pediatria">Pediatría</option>
-<option value="oftalmologia">Oftalmología</option>
-<option value="ginecologia">Ginecología</option>
+<option value="Clínica Médica">Clínica Médica</option>
+<option value="Pediatría">Pediatría</option>
+<option value="Cardiología">Cardiología</option>
+<option value="Traumatología">Traumatología</option>
+<option value="Ginecología">Ginecología</option>
+<option value="Oftalmología">Oftalmología</option>
 </select>
 </div>
 <div class="mb-3">
@@ -149,121 +151,171 @@
 </footer>
 <!-- Bootstrap JS -->
 <script>
-// turnos.js
 
 document.addEventListener("DOMContentLoaded", () => {
+
   const params = new URLSearchParams(window.location.search);
-  const medicoPreselect = params.get("medico") || "";
-  const especialidadPreselect = params.get("especialidad") || "";
 
-  const selectEspecialidad = document.getElementById("especialidad");
-  const selectMedico = document.getElementById("medico");
-  const inputFecha = document.getElementById("fecha");
-  const inputHora = document.getElementById("hora");
-  const btnReservar = document.getElementById("btn-reservar");
+  const medicoURL = params.get("medico");
+  const especialidadURL = params.get("especialidad");
 
-  const especialidades = [
-    "Clínica Médica",
-    "Pediatría",
-    "Cardiología",
-    "Traumatología",
-    "Ginecología",
-    "Oftalmología",
-  ];
+  const selectEspecialidad =
+    document.getElementById("especialidad");
+
+  const selectMedico =
+    document.getElementById("medico");
+
+  const form =
+    document.getElementById("form-turno");
+
+  const selectHora =
+  document.getElementById("hora");
+
+  const horariosDisponibles = [
+  "08:00",
+  "09:00",
+  "10:00",
+  "11:00",
+  "12:00",
+  "13:00",
+  "14:00",
+  "15:00",
+  "16:00"
+];
 
   const medicosPorEspecialidad = {
-    "Clínica Médica": ["Dr. Juan Pérez"],
-    Pediatría: ["Dra. María González"],
-    Cardiología: ["Dr. Carlos Ruiz"],
-    Traumatología: ["Dra. Laura Méndez"],
-    Ginecología: ["Dr. Pedro Fernández"],
-    Oftalmología: ["Dra. Sofía Torres"],
+
+    "Clínica Médica": [
+      "Dr. Juan Pérez"
+    ],
+
+    "Pediatría": [
+      "Dra. María González"
+    ],
+
+    "Cardiología": [
+      "Dr. Carlos Ruiz"
+    ],
+
+    "Traumatología": [
+      "Dra. Laura Méndez"
+    ],
+
+    "Ginecología": [
+      "Dr. Pedro Fernández"
+    ],
+
+    "Oftalmología": [
+      "Dra. Sofía Torres"
+    ],
   };
 
-  if (selectEspecialidad) {
-    selectEspecialidad.innerHTML = `<option value="">Seleccioná especialidad</option>` +
-      especialidades
-        .map(
-          (e) =>
-            `<option value="${e}" ${e === especialidadPreselect ? "selected" : ""}>${e}</option>`
-        )
-        .join("");
-  }
+  function cargarMedicos(especialidad) {
 
-  function actualizarMédicos(especialidad) {
-    if (!selectMedico) return;
-    const lista = medicosPorEspecialidad[especialidad] || [];
     selectMedico.innerHTML =
-      `<option value="">Seleccioná médico</option>` +
-      lista
-        .map(
-          (m) =>
-            `<option value="${m}" ${m === medicoPreselect ? "selected" : ""}>${m}</option>`
-        )
-        .join("");
-  }
+      '<option value="">Seleccionar...</option>';
 
-  if (selectEspecialidad && selectMedico) {
-    if (especialidadPreselect) {
-      actualizarMédicos(especialidadPreselect);
+    const lista =
+      medicosPorEspecialidad[especialidad] || [];
+
+    lista.forEach((medico) => {
+
+      const option =
+        document.createElement("option");
+
+      option.value = medico;
+      option.textContent = medico;
+
+      selectMedico.appendChild(option);
+    });
+  }
+  function cargarHorarios() {
+
+  selectHora.innerHTML =
+    '<option value="">Seleccionar...</option>';
+
+  horariosDisponibles.forEach((hora) => {
+
+    const option =
+      document.createElement("option");
+
+    option.value = hora;
+    option.textContent = hora;
+
+    selectHora.appendChild(option);
+  });
+}
+  selectEspecialidad.addEventListener(
+    "change",
+    () => {
+      cargarMedicos(selectEspecialidad.value);
     }
-    selectEspecialidad.addEventListener("change", (e) => {
-      actualizarMédicos(e.target.value);
-      selectMedico.value = "";
-    });
+  );
+
+  // PRESELECCIÓN
+  if (especialidadURL) {
+
+    selectEspecialidad.value =
+      especialidadURL;
+
+    cargarMedicos(especialidadURL);
+
+    if (medicoURL) {
+
+      selectMedico.value =
+        medicoURL;
+    }
   }
 
-  // Fecha mínima: hoy
-  if (inputFecha) {
-    const hoy = new Date();
-    const yyyy = hoy.getFullYear();
-    const mm = String(hoy.getMonth() + 1).padStart(2, "0");
-    const dd = String(hoy.getDate()).padStart(2, "0");
-    inputFecha.min = `${yyyy}-${mm}-${dd}`;
-  }
+  // GUARDAR TURNO
+  cargarHorarios();
+  form.addEventListener("submit", (e) => {
 
-  if (btnReservar) {
-    btnReservar.addEventListener("click", () => {
-      const especialidad = selectEspecialidad?.value || "";
-      const medico = selectMedico?.value || "";
-      const fecha = inputFecha?.value || "";
-      const hora = inputHora?.value || "";
-
-      if (!especialidad || !medico || !fecha || !hora) {
-        alert("Completá todos los campos para reservar el turno.");
-        return;
-      }
-
-      const turno = {
-        especialidad,
-        medico,
-        fecha,
-        hora,
-        paciente: localStorage.getItem("usuario") || "Usuario",
-        estado: "Pendiente",
-      };
-
-      const turnos = JSON.parse(localStorage.getItem("turnos") || "[]");
-      turnos.push(turno);
-      localStorage.setItem("turnos", JSON.stringify(turnos));
-
-      alert("Turno reservado con éxito.");
-      window.location.href = "historial.html";
-    });
-      }
-    });
-    document.getElementById("formTurno").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const turno = {
-        paciente: document.getElementById("paciente").value,
-        especialidad: document.getElementById("especialidad").value
+
+      dni:
+        document.getElementById("dni").value,
+
+      nombre:
+        document.getElementById("nombre").value,
+
+      especialidad:
+        selectEspecialidad.value,
+
+      medico:
+        selectMedico.value,
+
+      fecha:
+        document.getElementById("fecha").value,
+
+      hora:
+        document.getElementById("hora").value,
+
+      estado: "Pendiente"
     };
 
-    agregarDato("turnos", turno);
+    const turnos =
+      JSON.parse(
+        localStorage.getItem("turnos")
+      ) || [];
 
-    alert("Turno guardado");
+    turnos.push(turno);
+
+    localStorage.setItem(
+      "turnos",
+      JSON.stringify(turnos)
+    );
+
+    alert("Turno reservado correctamente");
+
+    window.location.href =
+      "paginas/historial/historial.html";
+  });
+
 });
-    </script>
+
+</script>
 </body>
 </html>
